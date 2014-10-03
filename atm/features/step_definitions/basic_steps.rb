@@ -1,7 +1,3 @@
-CAPTURE_CASH_AMOUNT = Transform /^\$\d+$/ do |number|
-  number.to_i
-end
-
 module KnowsMyAccount
   def my_account
     @my_account  ||= Account.new
