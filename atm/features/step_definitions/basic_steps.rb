@@ -1,19 +1,3 @@
-module KnowsMyAccount
-  def my_account
-    @my_account  ||= Account.new
-  end
-
-  def cash_slot
-    @cash_slot ||= CashSlot.new
-  end
-
-  def teller
-    @teller = Teller.new cash_slot
-  end
-end
-
-World(KnowsMyAccount)
-
 Given /^I have deposited (#{CAPTURE_CASH_AMOUNT}) in my account$/ do |amount|
   my_account.deposit(amount)
   expect(my_account.balance).to eq(amount),
