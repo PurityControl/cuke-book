@@ -6,6 +6,10 @@ class Account
   def balance
     @balance
   end
+
+  def debit(amount)
+    @balance -= amount
+  end
 end
 
 class Teller
@@ -14,6 +18,7 @@ class Teller
   end
 
   def withdraw_from(account, amount)
+    account.debit(amount)
     @cash_slot.dispense amount
   end
 end
