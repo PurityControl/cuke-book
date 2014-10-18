@@ -12,7 +12,7 @@ class Account
   end
   
   def balance
-    @balance_store.balance
+    @balance.balance
   end
 
   def debit(amount)
